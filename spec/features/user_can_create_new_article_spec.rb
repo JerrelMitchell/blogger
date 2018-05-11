@@ -6,6 +6,7 @@ describe 'user creates a new article' do
       it 'creates a new article' do
         title = 'New Title'
         body = 'New Body'
+        flash_message = "Article #{title} was created!"
 
         visit articles_path
         click_link 'Create A New Article'
@@ -18,6 +19,7 @@ describe 'user creates a new article' do
 
         expect(page).to have_content(title)
         expect(page).to have_content(body)
+        expect(page).to have_content(flash_message)
       end
     end
   end
